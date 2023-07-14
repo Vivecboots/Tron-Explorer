@@ -88,7 +88,7 @@ npm run serve
 You can now access Tron-Explorer in your browser at http://localhost:8080. Search for a transaction by its hash, an account by its address (beginning with T), or a block by its number.
 
 
-5. 🚀 To deploy this project run:
+🚀5. To deploy this project run:
 
 ```bash
   npm run build
