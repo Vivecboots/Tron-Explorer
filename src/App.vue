@@ -1,26 +1,32 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <Search @searchResult="showResult" />
+    <div v-if="searchResult">
+      <h2>Search Result:</h2>
+      <pre>{{ searchResult }}</pre>
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Search from './components/Search-component.vue'
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
+    Search
+  },
+  data() {
+    return {
+      searchResult: null, // added variable to hold search result
+    }
+  },
+  methods: {
+    showResult(result) {
+      console.log(result);
+      this.searchResult = result; // assign the result to searchResult
+    }
+
+    
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
