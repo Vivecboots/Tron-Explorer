@@ -74,6 +74,7 @@ Get Account
 VUE_APP_HTTP_PROVIDER=https://api.trongrid.io
 VUE_APP_PRIVATE_KEY=YourPrivateKey
 
+```
 
 Remember to replace YourPrivateKey with your actual private key. Your private key is sensitive information. Never share it and use it responsibly!
 
@@ -83,6 +84,7 @@ Remember to replace YourPrivateKey with your actual private key. Your private ke
 ```bash
 npm run serve
 
+```
 You can now access Tron-Explorer in your browser at http://localhost:8080. Search for a transaction by its hash, an account by its address (beginning with T), or a block by its number.
 ```
 ## Deployment
