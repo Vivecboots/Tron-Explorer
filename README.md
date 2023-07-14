@@ -106,26 +106,29 @@ You can now access Tron-Explorer in your browser at http://localhost:8080. Searc
  - [TronDAO Official Website:]https://trondao.org
 
 
-## Authors
+## 💡Why I'm Doing This
 
-"#W" Is a junior blockchain developer from the Pacific Northwest.  If you would like to know more, please leave a message on the page as a request or at blairqqw@gmail.com.  Please check often as I will be updating with more information. Thank you for checking out my project and check back for more home brewed tutorials!
+Migrating from EVM and ZK EVM to TVM presented initial challenges, as expected when transitioning to a new environment. However, in smaller communities, it can be difficult to find answers to all your questions, making it harder to adapt to the new platform. This challenge is magnified when participating in a hackathon that caters to both amateurs and professionals.
+
+To address this issue and support users facing similar problems, it is crucial to foster a sense of community. By inspiring and empowering builders, we can create an environment where newcomers feel encouraged rather than discouraged. Sharing experiences, providing guidance, and offering resources will help break down barriers and facilitate smoother transitions for new developers.
+
+By actively contributing to community building efforts, we can ensure that knowledge is shared, questions are answered, and a supportive network is established. This will ultimately help newcomers overcome challenges, inspire innovation, and foster a collaborative environment for all participants.
+
+Let's come together to inspire, educate, and create a thriving community where builders of all levels can thrive.
+## 🖋️Authors
+
+"#W" (Blair) Is a junior blockchain developer from the Pacific Northwest.  If you would like to know more, please leave a message on the page as a request or at blairqqw@gmail.com.  Please check often as I will be updating with more information. Thank you for checking out my project and check back for more tutorials!
 
 - [@vivecboots](https://github.com/Vivecboots)
 
+## 🤝Contributing
 
-## Lessons Learned
+Contributions are always welcome!
 
-What did you learn while building this project? What challenges did you face and how did you overcome them?
+Please feel free to reach out to me or submit a request.  Tron is a blockchain with a lot of potential but a shortage of tools. So feel free to use what you need!
 
 
 📜 License
 
 ![license](https://img.shields.io/badge/License-MIT-brightgreen)
-
-
-## Contributing
-
-Contributions are always welcome!
-
-Please feel free to reach out to me or submit a request.  Tron is a blockchain with a lot of potential but a shortage of tools. So feel free to use what you need!
 
