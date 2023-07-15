@@ -1,57 +1,60 @@
 <template>
     <div>
-      <div v-for="transaction in transactions" :key="transaction.transactionID">
-        <!-- Display transaction information -->
-        <div>{{ transaction.transactionID }}</div>
-        <div>{{ transaction.from }}</div>
-        <div>{{ transaction.to }}</div>
-        <div>{{ transaction.value }}</div>
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Transaction Hash</th>
+            <th>Block</th>
+            <th>Age</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Contract</th>
+            <th>Value</th>
+            <th>Transaction Fee</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="transaction in transactions" :key="transaction.transactionID">
+            <td>{{ transaction.transactionID }}</td>
+            <td>{{ transaction.blockNumber }}</td>
+            <td>{{ transaction.age }}</td>
+            <td>{{ transaction.from }}</td>
+            <td>{{ transaction.to }}</td>
+            <td>{{ transaction.contract }}</td>
+            <td>{{ transaction.value }}</td>
+            <td>{{ transaction.fee }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </template>
   
   <script>
-  import TronWeb from 'tronweb';
+  // ... existing code ...
   
   export default {
-    data() {
-      return {
-        transactions: [],
-      };
-    },
-    mounted() {
-      const HttpProvider = 'https://api.trongrid.io';
-      const fullNode = new TronWeb.providers.HttpProvider(HttpProvider);
-      const eventServer = new TronWeb.providers.HttpProvider(HttpProvider);
+    // ... existing code ...
   
-      const tronWeb = new TronWeb(fullNode, null, eventServer);
-  
-      // Fetch initial transactions
-      this.fetchTransactions(tronWeb);
-  
-      // Continuously fetch transactions at a specified interval
-      setInterval(() => {
-        this.fetchTransactions(tronWeb);
-      }, 5000); // Fetch every 5 seconds, adjust as needed
-    },
     methods: {
-      async fetchTransactions(tronWeb) {
-        const contractAddress = '0x...'; // Specify the contract address to filter events
-        const eventName = 'Transfer'; // Specify the event name to filter
-  
-        try {
-          const transactions = await tronWeb.getEventByTransactionID({
-            eventName,
-            contractAddress,
-          });
-  
-          // Update the transactions data array
-          this.transactions = transactions;
-        } catch (error) {
-          console.error('Error fetching transactions:', error);
-        }
-      },
+        async fetchTransactions(tronWeb) {
+  try {
+    const transactions = await tronWeb.trx.getRecentTransactions();
+
+    // Update the transactions data array
+    this.transactions = transactions.data.map(transaction => ({
+      transactionID: transaction.txID,
+      blockNumber: transaction.blockNumber,
+      age: 'Placeholder Age', // Replace with actual code to calculate age
+      from: transaction.raw_data.contract[0].parameter.value.owner_address,
+      to: transaction.raw_data.contract[0].parameter.value.to_address,
+      contract: 'Placeholder Contract', // Replace with actual code to fetch contract information
+      value: transaction.raw_data.contract[0].parameter.value.amount,
+      fee: 'Placeholder Fee', // Replace with actual code to fetch transaction fee
+    }));
+  } catch (error) {
+    console.error('Error fetching transactions:', error);
+}
     },
-  };
-  </script>
-  
+  },
+};
+</script>
